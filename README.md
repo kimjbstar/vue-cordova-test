@@ -1,4 +1,5 @@
 # gelato
+vue-cordova hybrid app framework project.
 
 ## Project setup
 ```
