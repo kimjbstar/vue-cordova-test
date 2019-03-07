@@ -1,0 +1,27 @@
+.gel-title-bar {
+	width:100vw;
+	display:flex;
+	flex-direction: row;
+	background-color:#94D5FF;
+	height:44px;
+	align-items:center;
+	justify-content: space-between;
+	color:white;
+
+	.gel-nav-btn {
+		margin:0px 10px;
+		min-width: 10px;
+	}
+
+	.gel-back-btn {
+
+	}
+
+	.gel-menu-btn {
+
+	}
+
+	.gel-title-name {
+
+	}
+}
