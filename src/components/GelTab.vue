@@ -1,13 +1,13 @@
 <template>
 	<div class="gel-tab">
-		{{name}}
+		<router-link :to="'/'+item.name">{{item.name}}</router-link>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'GelTab',
-	props: [ 'name'],
+	props: [ 'item'],
 }
 </script>
 

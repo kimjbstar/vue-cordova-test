@@ -5,6 +5,7 @@
 	text-align: center;
 	margin:0;
 	padding:0;
+	overflow-y:hidden;
 }
 body {
 	margin:0px;
@@ -34,4 +35,17 @@ body {
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+}
+.dev-routers {
+	position: absolute;
+	font-size: 9px;
+	right: 0px;
+	top: 0px;
+	background-color: black;
+	color:white;
+	opacity: .3;
+	a {
+		color: white;
+		text-decoration: none;
+	}
 }

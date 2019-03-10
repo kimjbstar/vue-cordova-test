@@ -1,7 +1,7 @@
 <template>
 	<div class="gel-tabs">
-		<template v-for="(tab, index) in tabs">
-			<gel-tab :key="index" :name="tab.name"/>
+		<template v-for="(tab, index) in items">
+			<gel-tab :key="index" :item="tab"/>
 		</template>
 	</div>
 </template>
@@ -10,14 +10,10 @@
 import GelTab from './GelTab.vue'
 export default {
 	name: 'GelTabs',
-	props: [ 'tabs' ,'foo'],
+	props: [ 'items' ,'foo'],
 	components : {
 		GelTab,
 	},
-	created() {
-		// Console.log('this.tabs', this.tabs);
-		// Console.log('this.$props', this.$props);
-	}
 }
 </script>
 

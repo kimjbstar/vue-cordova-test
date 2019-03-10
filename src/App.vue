@@ -1,28 +1,60 @@
 <template>
 	<div id="app">
-		<div id="nav">
-			<router-link to="/">Home</router-link> |
-			<router-link to="/about">About</router-link>
-		</div>
-		<transition name="slide-fade">
-			<router-view></router-view>
-		</transition>
-<!-- 		<div class="gel-view">
-			<gel-title-bar title="gelato project !!"/>
-			<div>
-				<router-link to="/">root</router-link>
-				<router-link to="/foo">Go to Foo</router-link>
-				<router-link to="/bar2">Go to Bar</router-link>
-				<router-view></router-view>
+		<div class="dev-routers">
+			<div v-for="page in pages" :key="page.name">
+			<router-link :to="page.path" >
+				{{page.name}}
+			</router-link>
 			</div>
-			<gel-tabs :tabs="tabs" :foo="'bar'"></gel-tabs>
-		</div> -->
+			현재 : {{ this.$router.currentRoute.name }}
+		</div>
+
+		<div class="gel-view">
+			<gel-title-bar title="gelato project !!"/>
+			<transition name="slide-fade">
+				<router-view></router-view>
+			</transition>
+			<gel-tabs :items="tabs" :foo="'bar'"></gel-tabs>
+		</div>
 	</div>
 </template>
 
+<script>
+import GelTabs from '@/components/GelTabs.vue'
+import GelTitleBar from '@/components/GelTitleBar.vue'
 
+export default {
+	components: {
+		GelTabs,
+		GelTitleBar,
+	},
+	created() {
+		this.$router.options.routes.forEach(route => {
+			this.pages.push({
+				name: route.name,
+				path: route.path,
+			})
+		})
+	},
+	data: function() {
+		return {
+			pages: [],
+			tabs : [
+				{
+					name: 'timeline',
+				}, {
+					name: 'friend',
+				}, {
+					name: 'setting',
+				}
+			],
+		}
+	}
+}
+</script>
 
 <style lang="scss">
-	@import './styles/base/_common.scss';
+	@import "@/styles/base/_common.scss";
+	@import "@/styles/base/_layout.scss";
+	@import "@/styles/base/_mixins.scss";
 </style>
-
