@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import TabTimeline from './views/TabTimeline.vue'
-import TabFriend from './views/TabFriend.vue'
-import TabSetting from './views/TabSetting.vue'
+import Timeline from './views/Timeline.vue'
+import Friends from './views/Friends.vue'
+import Setting from './views/Setting.vue'
+import Mypage from './views/Mypage.vue'
 import PostDetail from './views/PostDetail.vue'
+import Components from './views/Components.vue'
+import Login from './views/Login.vue'
 
 
 Vue.use(Router)
@@ -21,25 +24,36 @@ export default new Router({
 		{
 			path: '/timeline',
 			name: 'timeline',
-			component: TabTimeline,
-			children: [
-				{
-					path: 'post-detail/:postId',
-					name: 'post-detail',
-					component: PostDetail,
-				},
-			]
+			component: Timeline,
 		},
 		{
 			path: '/friend',
 			name: 'friend',
-			component: TabFriend,
+			component: Friends,
 			children: [],
 		},
 		{
 			path: '/setting',
 			name: 'setting',
-			component: TabSetting,
+			component: Setting,
+			children: [],
+		},
+		{
+			path: '/mypage',
+			name: 'mypage',
+			component: Mypage,
+			children: [],
+		},
+		{
+			path: '/components',
+			name: 'components',
+			component: Components,
+			children: [],
+		},
+		{
+			path: '/login',
+			name: 'login',
+			component: Login,
 			children: [],
 		},
 		// {
@@ -48,3 +62,11 @@ export default new Router({
 		// }
 	]
 })
+
+// children: [
+// 	{
+// 		path: 'post-detail/:postId',
+// 		name: 'post-detail',
+// 		component: PostDetail,
+// 	},
+// ]

@@ -1,9 +1,8 @@
 <template>
-<div class="tab-timeline" style="height: calc(100vh - 88px)">
+<div class="timeline">
 	<div class="posts">
 		{{ posts }}
 	</div>
-	<router-view></router-view>
 </div>
 </template>
 
