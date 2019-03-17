@@ -96,16 +96,16 @@
 </template>
 
 <script>
-import Setting from '@/views/Setting.vue'
-import Mypage from '@/views/Mypage.vue'
-import Timeline from '@/views/Timeline.vue'
+// import Setting from '@/views/Setting.vue'
+// import Mypage from '@/views/Mypage.vue'
+// import Timeline from '@/views/Timeline.vue'
 
 export default {
 	name: 'App',
 	components: {
-		Setting,
-		Mypage,
-		Timeline,
+		// Setting,
+		// Mypage,
+		// Timeline,
 	},
 	created() {
 		this.$router.options.routes.forEach(route => {

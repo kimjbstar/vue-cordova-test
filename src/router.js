@@ -13,7 +13,7 @@ import Login from './views/Login.vue'
 Vue.use(Router)
 
 export default new Router({
-	mode: 'history',
+	mode: process.env.CORDOVA_PLATFORM ? 'hash' : 'history',
 	base: process.env.BASE_URL,
 	routes: [
 		{
@@ -54,6 +54,12 @@ export default new Router({
 			path: '/login',
 			name: 'login',
 			component: Login,
+			children: [],
+		},
+		{
+			path: '/post-detail/:postId',
+			name: 'post-detail',
+			component: PostDetail,
 			children: [],
 		},
 		// {
