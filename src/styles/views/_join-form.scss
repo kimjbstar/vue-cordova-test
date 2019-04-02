@@ -1,0 +1,90 @@
+.page-join-form {
+	.container-login {
+		display: flex;
+		height:100vh;
+		flex-flow: column nowrap;
+		margin-top: vw-base(20 * 2px);
+		align-items: center;
+
+		.form-join {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+
+			.icon-logo {
+				height: vw-base(130 * 2px);
+				width: vw-base(173 * 2px);
+				background-color: $color-main;
+			}
+
+			.name {
+				margin-top: vw-base(25 * 2px);
+				border-radius: vw-base(25 * 2px);
+				height: vw-base(50 * 2px);
+				width: vw-base(280 * 2px);
+				border: 1px solid $color-main;
+				font-size: vw-base(14 * 2px);
+				padding: vw-base(17 * 2px);
+			}
+
+			.email {
+				margin-top: vw-base(25 * 2px);
+				border-radius: vw-base(25 * 2px);
+				height: vw-base(50 * 2px);
+				width: vw-base(280 * 2px);
+				border: 1px solid $color-main;
+				font-size: vw-base(14 * 2px);
+				padding: vw-base(17 * 2px);
+			}
+
+			.password {
+				margin-top: vw-base(25 * 2px);
+				border-radius: vw-base(25 * 2px);
+				height: vw-base(50 * 2px);
+				width: vw-base(280 * 2px);
+				border: 1px solid $color-main;
+				font-size: vw-base(14 * 2px);
+				padding: vw-base(17 * 2px);
+			}
+
+			.password-confirm {
+				margin-top: vw-base(25 * 2px);
+				border-radius: vw-base(25 * 2px);
+				height: vw-base(50 * 2px);
+				width: vw-base(280 * 2px);
+				border: 1px solid $color-main;
+				font-size: vw-base(14 * 2px);
+				padding: vw-base(17 * 2px);
+			}
+
+			.row-desc {
+				display: flex;
+				flex-flow: row nowrap;
+				margin-top: vw-base(25 * 2px);
+
+				.text-desc {
+					font-size:vw-base(14 * 2px);
+				}
+				.text-submit {
+					margin-left: vw-base(5 * 2px);
+					color: $color-main;
+				}
+			}
+
+			div.btn-submit {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				margin-top: vw-base(25 * 2px);
+				border-radius: vw-base(25 * 2px);
+				height: vw-base(50 * 2px);
+				width: vw-base(280 * 2px);
+				background-color: $color-main;
+				color: $color-white;
+			}
+
+		}
+
+	}
+}

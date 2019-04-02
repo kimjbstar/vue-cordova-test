@@ -1,0 +1,110 @@
+@function strip-unit($value) {
+	@return $value / ($value * 0 + 1);
+}
+
+@function vw-base($px, $base-width: $mobile-base-width) {
+	$px: $px / 1px;
+	$base-width: $base-width / 1px;
+	@return $px / $base-width * 100 * 1vw;
+}
+
+// sass-lint:disable-block no-vendor-prefixes
+@mixin css3-prefix($property, $value) {
+	-webkit-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+
+@mixin at-least($device-width) {
+	@media screen and (min-width: $device-width) {
+		@content;
+	}
+}
+
+@mixin until($device-width) {
+	@media screen and (max-width: $device-width - .01) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@include at-least($breakpoint-mobile) {
+		@content
+	};
+}
+
+@mixin mobile {
+	@include until($breakpoint-mobile) {
+		@content
+	};
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin user-select ($value: none) {
+	-webkit-user-select: $value;
+	-moz-user-select: $value;
+	-ms-user-select: $value;
+	user-select: $value;
+}
+
+@mixin text-cut($c: '') {
+	@if $c != '' {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: $c;
+		-webkit-box-orient: vertical;
+		word-wrap: break-word;
+	} @else {
+		word-break: keep-all;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+}
+
+@mixin bg-2x($image, $size: contain, $position: center, $repeat: no-repeat) {
+	background-image: url($image);
+	background-size: $size;
+	background-position: $position;
+	background-repeat: $repeat;
+
+	@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+		background-image: url(str-insert($image, '@2x', -5));
+	}
+}
+
+@mixin bg-3x($image, $size: contain, $position: center, $repeat: no-repeat) {
+	@include bg-2x($image, $size, $position, $repeat);
+
+	@media (-webkit-min-device-pixel-ratio: 3), (min--moz-device-pixel-ratio: 3),	(min-resolution: 3dppx),	(min-resolution: 192dpi) {
+		background-image: url(str-insert($image, '@3x', -5));
+	}
+}
+
+@mixin content-row($max-width: $pc-base-width) {
+	max-width: $max-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin when-page($selector) {
+	#{$selector} & {
+		@content;
+	}
+}

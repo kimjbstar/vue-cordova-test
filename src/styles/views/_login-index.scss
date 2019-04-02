@@ -1,0 +1,43 @@
+.page-login-index {
+	.container-login {
+		display: flex;
+		height:100vh;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+
+		.icon-logo {
+			height: vw-base(130 * 2px);
+			width: vw-base(173 * 2px);
+			background-color: $color-main;
+		}
+
+		div.btn-login {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			margin-top: vw-base(25 * 2px);
+			border-radius: vw-base(25 * 2px);
+			height: vw-base(50 * 2px);
+			width: vw-base(280 * 2px);
+			background-color: $color-main;
+			color: $color-white;
+		}
+
+
+		div.btn-join {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			margin-top: vw-base(25 * 2px);
+			border-radius: vw-base(25 * 2px);
+			height: vw-base(50 * 2px);
+			width: vw-base(280 * 2px);
+			background-color: $color-white;
+			color: $color-main;
+			border: 1px solid $color-main;
+		}
+	}
+}

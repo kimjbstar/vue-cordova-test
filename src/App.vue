@@ -8,6 +8,7 @@
 	</div> -->
 
 		<v-navigation-drawer
+			v-if="isHeaderShowing"
 			v-model="drawer"
 			fixed
 			app
@@ -70,20 +71,20 @@
 
 		<v-toolbar
 			app
-			color="blue-grey"
-			dark
-			fixed
-			clipped-right
+			flat
+			color="transparent"
 			v-if="isHeaderShowing"
 		>
-			<v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-			<v-toolbar-title class="headline text-uppercase">title</v-toolbar-title>
+			<v-toolbar-side-icon v-if="isSidebarShowing" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+			<v-toolbar-title class="headline">title</v-toolbar-title>
 			<v-spacer></v-spacer>
 
 		</v-toolbar>
 
-		<v-content>
-			<router-view></router-view>
+		<v-content id="v-content">
+			<!-- <v-container fluid id="v-container"> -->
+				<router-view></router-view>
+			<!-- </v-container> -->
 		</v-content>
 
 		<v-footer v-if="isFooterShowing" color="blue-grey" class="white--text" app>
@@ -114,22 +115,24 @@ export default {
 				path: route.path,
 			})
 		})
+		if ( ['login-index'].indexOf(this.$route.name) >= 0) {
+			this.isHeaderShowing = false;
+		}
 	},
 	data () {
 		return {
 			isHeaderShowing: true,
 			isFooterShowing: false,
+			isSidebarShowing : false,
 			pages: [],
 			drawer: null,
-			drawerRight: null,
-			right: false,
-			left: false
 		}
 	}
 }
 </script>
 
 <style lang="scss">
+	@import "@/styles/base/_reset.scss";
 	@import "@/styles/base/_common.scss";
 	@import "@/styles/base/_layout.scss";
 	@import "@/styles/base/_mixins.scss";

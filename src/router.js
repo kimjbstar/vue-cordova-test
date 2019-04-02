@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import HomeIndex from './views/HomeIndex.vue'
 import Timeline from './views/Timeline.vue'
 import Friends from './views/Friends.vue'
 import Setting from './views/Setting.vue'
 import Mypage from './views/Mypage.vue'
 import PostDetail from './views/PostDetail.vue'
 import Components from './views/Components.vue'
-import Login from './views/Login.vue'
+import LoginIndex from './views/LoginIndex.vue'
+import JoinForm from './views/JoinForm.vue'
+// import LoginForm from './views/LoginForm.vue'
 
 
 Vue.use(Router)
@@ -18,8 +20,8 @@ export default new Router({
 	routes: [
 		{
 			path: '/',
-			name: 'home',
-			component: Home,
+			name: 'home-index',
+			component: HomeIndex,
 		},
 		{
 			path: '/timeline',
@@ -51,9 +53,21 @@ export default new Router({
 			children: [],
 		},
 		{
-			path: '/login',
-			name: 'login',
-			component: Login,
+			path: '/login-index',
+			name: 'login-index',
+			component: LoginIndex,
+			children: [],
+		},
+		// {
+		// 	path: '/login-form',
+		// 	name: 'login-form',
+		// 	component: LoginForm,
+		// 	children: [],
+		// },
+		{
+			path: '/join-form',
+			name: 'join-form',
+			component: JoinForm,
 			children: [],
 		},
 		{
