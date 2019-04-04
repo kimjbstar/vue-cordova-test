@@ -2,15 +2,122 @@
 	background-color: $color-bg-main;
 
 	.container-filters {
+		margin: vw-base(10* 2px) vw-base(30 * 2px) 0;
 
+
+		.row-search {
+			width: 100%;
+			display: flex;
+			height: vw-base(48 * 2px);
+
+			.btn-filter {
+				width: vw-base(61 * 2px);
+				margin-right: vw-base(10 * 2px);
+				flex: 0 0 auto;
+				background-color: $color-white;
+			}
+
+			.search {
+				padding: vw-base(18 * 2px) vw-base(30 * 2px);
+				font-size: vw-base(13 * 2px);
+				flex: 1 0 auto;
+				background-color: $color-white;
+				position: relative;
+
+				&:after {
+					position: absolute;
+					content: '';
+					right:10px;
+					@include bg-3x('/assets/logo-main.png');
+				}
+			}
+		}
+
+		.row-filter {
+			display: flex;
+			height: vw-base(35 * 2px);
+			margin-top: vw-base(10 * 2px);
+			justify-content: space-between;
+
+			.location {
+				width: vw-base(98 * 2px);
+				background-color: $color-white;
+			}
+
+			.price {
+				width: vw-base(98 * 2px);
+				margin-left: vw-base(10 * 2px);
+				background-color: $color-white;
+			}
+
+			.time {
+				width: vw-base(98 * 2px);
+				margin-left: vw-base(10 * 2px);
+				background-color: $color-white;
+			}
+
+		}
 	}
 
 	.section-foods {
+		margin: vw-base(30* 2px) vw-base(30 * 2px) 0;
 
+		.row-best {
+			display: flex;
+			justify-content: space-between;
+
+			.text-best {
+				font-size: vw-base(18 * 2px);
+			}
+
+			.show-all {
+				color: $color-main;
+				font-size: vw-base(11 * 2px);
+
+			}
+		}
+
+		.swiper {
+			height: vw-base(200 * 2px);
+		}
 	}
 
 	.container-categories {
+		margin: vw-base(30* 2px) vw-base(30 * 2px) 0;
 
+		.text-title {
+			font-size: vw-base(18* 2px)
+		}
+
+		.wrap-categories {
+			margin-top: vw-base(25 * 2px);
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+
+			.wrap-category {
+				display: flex;
+				flex-flow: column nowrap;
+				// width: vw-base(85 * 2px);
+				// height: vw-base(85 * 2px);
+				margin-right: vw-base(5 * 2px);
+				margin-bottom: vw-base(20 * 2px);
+
+
+				.icon {
+					border-radius: vw-base(15 * 2px);
+					background-color:$color-main;
+					width: vw-base(60 * 2px);
+					height: vw-base(60 * 2px);
+				}
+
+				.name {
+					margin-top: vw-base(12 * 2px);
+					text-align: center;
+					font-size: vw-base(13 * 2px);
+				}
+			}
+		}
 	}
 
 }

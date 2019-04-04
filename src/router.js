@@ -9,7 +9,7 @@ import PostDetail from './views/PostDetail.vue'
 import Components from './views/Components.vue'
 import LoginIndex from './views/LoginIndex.vue'
 import JoinForm from './views/JoinForm.vue'
-// import LoginForm from './views/LoginForm.vue'
+import LoginForm from './views/LoginForm.vue'
 
 
 Vue.use(Router)
@@ -58,12 +58,12 @@ export default new Router({
 			component: LoginIndex,
 			children: [],
 		},
-		// {
-		// 	path: '/login-form',
-		// 	name: 'login-form',
-		// 	component: LoginForm,
-		// 	children: [],
-		// },
+		{
+			path: '/login-form',
+			name: 'login-form',
+			component: LoginForm,
+			children: [],
+		},
 		{
 			path: '/join-form',
 			name: 'join-form',
