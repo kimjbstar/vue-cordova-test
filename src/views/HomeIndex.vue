@@ -3,13 +3,17 @@
 		<div class="container-filters">
 			<div class="row-search">
 				<div class="btn-filter"></div>
-				<input type="text" class="search" placeholder="search for food">
+				<div class="wrap-search">
+					<input type="text" placeholder="search for food">
+					<div class="icon-search"></div>
+				</div>
+
 			</div>
 			<div class="row-filter">
 				<!-- select directive 필요 -->
-				<input type="text" class="location">
-				<input type="text" class="price">
-				<input type="text" class="time">
+				<div class="select-location"></div>
+				<div class="select-price"></div>
+				<div class="select-time"></div>
 			</div>
 
 		</div>
@@ -26,39 +30,10 @@
 				Choose By Category
 			</div>
 			<div class="wrap-categories">
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
+				<div class="wrap-category" v-for="category in categories">
+					<div class="wrap-icon" :class="'category'+category.id"></div>
+					<div class="name">{{category.name}}</div>
 				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-				<div class="wrap-category">
-					<div class="icon"></div>
-					<div class="name">1</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -70,6 +45,58 @@ export default {
 	name: 'home',
 	data: function(){
 		return {
+			options: {
+				locations : [
+					{
+						id: 1,
+						name: '서울',
+					},
+					{
+						id: 2,
+						name: '인천',
+					},
+					{
+						id: 3,
+						name: '대구',
+					},
+				],
+				prices: [ '1000 ~ 10000', '10000 ~ 20000', '20000 ~'],
+				time: ['~10', '10 ~ 20', '20 ~ 30', '30 ~'],
+			},
+			categories: [
+				{
+					id: 1,
+					name:'Breakfast',
+				},
+				{
+					id: 2,
+					name:'Lunch',
+				},
+				{
+					id: 3,
+					name:'Dinner',
+				},
+				{
+					id: 4,
+					name:'Pizza',
+				},
+				{
+					id: 5,
+					name:'Fruits',
+				},
+				{
+					id: 6,
+					name:'Vegetables',
+				},
+				{
+					id: 7,
+					name:'Protein',
+				},
+				{
+					id: 8,
+					name:'More',
+				},
+			]
 		}
 	},
 	components: {

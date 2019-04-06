@@ -72,6 +72,7 @@
 		<v-toolbar
 			app
 			flat
+			height="50"
 			color="transparent"
 			v-if="isHeaderShowing"
 		>

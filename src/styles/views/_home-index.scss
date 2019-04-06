@@ -1,6 +1,16 @@
 .page-home-index {
 	background-color: $color-bg-main;
 
+	@mixin inner-icon($image) {
+		content: '';
+		position: absolute;
+		width: vw-base(50 * 2px);
+		height: vw-base(50 * 2px);
+		top: vw-base(5 * 2px);
+		left: vw-base(5 * 2px);
+		@include bg-3x($image);
+	}
+
 	.container-filters {
 		margin: vw-base(10* 2px) vw-base(30 * 2px) 0;
 
@@ -15,20 +25,29 @@
 				margin-right: vw-base(10 * 2px);
 				flex: 0 0 auto;
 				background-color: $color-white;
+				@include bg-3x('../assets/icon-slider.png');
 			}
 
-			.search {
-				padding: vw-base(18 * 2px) vw-base(30 * 2px);
-				font-size: vw-base(13 * 2px);
+			.wrap-search {
+				padding: vw-base(18 * 2px) vw-base(15 * 2px);
 				flex: 1 0 auto;
 				background-color: $color-white;
 				position: relative;
+				display: flex;
+				align-items: center;
 
-				&:after {
+				input {
+					font-size: vw-base(13 * 2px);
+				}
+
+				.icon-search {
 					position: absolute;
 					content: '';
 					right:10px;
-					@include bg-3x('/assets/logo-main.png');
+					width: vw-base(20 * 2px);
+					height: vw-base(20 * 2px);
+					// margin-right: vw-base(10 * 2px);
+					@include bg-3x('../assets/icon-search.png');
 				}
 			}
 		}
@@ -39,18 +58,18 @@
 			margin-top: vw-base(10 * 2px);
 			justify-content: space-between;
 
-			.location {
+			.select-location {
 				width: vw-base(98 * 2px);
 				background-color: $color-white;
 			}
 
-			.price {
+			.select-price {
 				width: vw-base(98 * 2px);
 				margin-left: vw-base(10 * 2px);
 				background-color: $color-white;
 			}
 
-			.time {
+			.select-time {
 				width: vw-base(98 * 2px);
 				margin-left: vw-base(10 * 2px);
 				background-color: $color-white;
@@ -104,11 +123,61 @@
 				margin-bottom: vw-base(20 * 2px);
 
 
-				.icon {
+				.wrap-icon {
 					border-radius: vw-base(15 * 2px);
 					background-color:$color-main;
 					width: vw-base(60 * 2px);
 					height: vw-base(60 * 2px);
+					position: relative;
+
+					&.category1 {
+						background-image: linear-gradient(180deg, #f45d7e ,#ec90e9);
+						&:after {
+							@include inner-icon('../assets//icon-category1.png');
+						}
+					}
+					&.category2 {
+						background-image: linear-gradient(180deg, #a86fda ,#f5b9d5);
+						&:after {
+							@include inner-icon('../assets//icon-category2.png');
+						}
+					}
+					&.category3 {
+						background-image: linear-gradient(180deg, #fd9b8d ,#fbbe7e);
+						&:after {
+							@include inner-icon('../assets//icon-category3.png');
+						}
+					}
+					&.category4 {
+						background-image: linear-gradient(180deg, #5ccd92 ,#bfe89c);
+						&:after {
+							@include inner-icon('../assets//icon-category4.png');
+						}
+					}
+					&.category5 {
+						background-image: linear-gradient(180deg, #a076e8 ,#b1c4f8);
+						&:after {
+							@include inner-icon('../assets//icon-category5.png');
+						}
+					}
+					&.category6 {
+						background-image: linear-gradient(180deg, #84fab0 ,#8fd3f4);
+						&:after {
+							@include inner-icon('../assets//icon-category6.png');
+						}
+					}
+					&.category7 {
+						background-image: linear-gradient(180deg, #9890e3 ,#b1f4cf);
+						&:after {
+							@include inner-icon('../assets//icon-category7.png');
+						}
+					}
+					&.category8 {
+						background-image: linear-gradient(180deg, #c471f5 ,#fa71cd);
+						&:after {
+							@include inner-icon('../assets//icon-category8.png');
+						}
+					}
 				}
 
 				.name {

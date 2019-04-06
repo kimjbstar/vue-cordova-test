@@ -9,7 +9,7 @@
 		.icon-logo {
 			height: vw-base(130 * 2px);
 			width: vw-base(173 * 2px);
-			background-color: $color-main;
+			@include bg-3x('../assets/icon-logo-main.png');
 		}
 
 		div.btn-login {
