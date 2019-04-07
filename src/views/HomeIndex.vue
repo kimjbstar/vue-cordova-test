@@ -10,14 +10,19 @@
 
 			</div>
 			<div class="row-filter">
-				<!-- select directive 필요 -->
-				<div class="select-location"></div>
-				<div class="select-price"></div>
-				<div class="select-time"></div>
+				<dropdown-select
+				:items="options.locations"
+				placeholder="위치"></dropdown-select>
+				<dropdown-select
+				:items="options.prices"
+				placeholder="가격"></dropdown-select>
+				<dropdown-select
+				:items="options.times"
+				placeholder="시간"></dropdown-select>
 			</div>
 
 		</div>
-		<div class="section-foods">
+		<div class="section-foods" style="margin-top:200px">
 			<div class="row-best">
 				<div class="text-best">Today's best Deal</div>
 				<div class="show-all">SHOW ALL</div>
@@ -30,7 +35,9 @@
 				Choose By Category
 			</div>
 			<div class="wrap-categories">
-				<div class="wrap-category" v-for="category in categories">
+				<div class="wrap-category"
+				v-bind:key="category.id"
+				v-for="category in categories">
 					<div class="wrap-icon" :class="'category'+category.id"></div>
 					<div class="name">{{category.name}}</div>
 				</div>
@@ -40,6 +47,7 @@
 </template>
 
 <script>
+import DropdownSelect from '../components/DropdownSelect.vue'
 
 export default {
 	name: 'home',
@@ -53,15 +61,45 @@ export default {
 					},
 					{
 						id: 2,
-						name: '인천',
+						name: '대전',
 					},
 					{
 						id: 3,
 						name: '대구',
 					},
+					{
+						id: 4,
+						name: '부산',
+					},
 				],
-				prices: [ '1000 ~ 10000', '10000 ~ 20000', '20000 ~'],
-				time: ['~10', '10 ~ 20', '20 ~ 30', '30 ~'],
+				prices: [
+					{
+						id: 1,
+						name: '~ 1000',
+					},
+					{
+						id: 2,
+						name: '1000 ~ 10000',
+					},
+					{
+						id: 3,
+						name: '10000 ~ 20000',
+					},
+				],
+				times: [
+					{
+						id: 1,
+						name: '~ 10',
+					},
+					{
+						id: 2,
+						name: '10 ~ 20',
+					},
+					{
+						id: 3,
+						name: '20 ~ 30',
+					},
+				],
 			},
 			categories: [
 				{
@@ -100,6 +138,7 @@ export default {
 		}
 	},
 	components: {
+		DropdownSelect,
 	}
 }
 </script>
