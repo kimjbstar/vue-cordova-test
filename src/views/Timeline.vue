@@ -30,7 +30,7 @@
 			}
 		},
 		methods: {
-			getMore (e) {
+			getMore: function() {
 				// 따로 제공되는거 없음, 이거로 진행
 				// https://codepen.io/mednabouli/pen/EdKzzL
 			},

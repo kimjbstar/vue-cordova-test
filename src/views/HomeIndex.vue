@@ -12,23 +12,27 @@
 			<div class="row-filter">
 				<dropdown-select
 				:items="options.locations"
-				placeholder="위치"></dropdown-select>
+				placeholder="위치"
+				:onChange="setLocation"
+				></dropdown-select>
 				<dropdown-select
 				:items="options.prices"
+				:onChange="setPrice"
 				placeholder="가격"></dropdown-select>
 				<dropdown-select
 				:items="options.times"
+				:onChange="setTime"
 				placeholder="시간"></dropdown-select>
 			</div>
 
 		</div>
-		<div class="section-foods" style="margin-top:200px">
+		<div class="section-foods">
 			<div class="row-best">
 				<div class="text-best">Today's best Deal</div>
 				<div class="show-all">SHOW ALL</div>
 			</div>
 
-			<div class="swiper"></div>
+			<v-swiper></v-swiper>
 		</div>
 		<div class="container-categories">
 			<div class="text-title">
@@ -48,11 +52,29 @@
 
 <script>
 import DropdownSelect from '../components/DropdownSelect.vue'
+import VSwiper from '../components/VSwiper.vue'
 
 export default {
 	name: 'home',
+	methods: {
+		setLocation: function(location) {
+			this.params.location = location.name;
+		},
+		setPrice: function(price) {
+			this.params.price = price.name;
+		},
+		setTime: function(time) {
+			this.params.time = time.name;
+		},
+	},
 	data: function(){
 		return {
+			params: {
+				location: '',
+				price: '',
+				time: '',
+				category_id: '',
+			},
 			options: {
 				locations : [
 					{
@@ -139,6 +161,7 @@ export default {
 	},
 	components: {
 		DropdownSelect,
+		VSwiper,
 	}
 }
 </script>
