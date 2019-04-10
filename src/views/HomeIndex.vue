@@ -32,7 +32,48 @@
 				<div class="show-all">SHOW ALL</div>
 			</div>
 
-			<v-swiper></v-swiper>
+			<swiper class="swiper-foods">
+				<swiper-slide class="wrap-food">
+					<div class="thumbnail"></div>
+					<div class="row-info">
+						<div class="col-title">
+							<div class="text-title">Mint Salad</div>
+							<div class="row-time">
+								<div class="icon-time"></div>
+								<div class="text-time">30-45 MIN</div>
+							</div>
+						</div>
+						<div class="price">$13.00</div>
+					</div>
+				</swiper-slide>
+				<swiper-slide class="wrap-food">
+					<div class="thumbnail"></div>
+					<div class="row-info">
+						<div class="col-title">
+							<div class="text-title">Mint Salad</div>
+							<div class="row-time">
+								<div class="icon-time"></div>
+								<div class="text-time">30-45 MIN</div>
+							</div>
+						</div>
+						<div class="price">$13.00</div>
+					</div>
+				</swiper-slide>
+				<swiper-slide class="wrap-food">
+					<div class="thumbnail"></div>
+					<div class="row-info">
+						<div class="col-title">
+							<div class="text-title">Mint Salad</div>
+							<div class="row-time">
+								<div class="icon-time"></div>
+								<div class="text-time">30-45 MIN</div>
+							</div>
+						</div>
+						<div class="price">$13.00</div>
+					</div>
+				</swiper-slide>
+			</swiper>
+
 		</div>
 		<div class="container-categories">
 			<div class="text-title">
@@ -52,7 +93,9 @@
 
 <script>
 import DropdownSelect from '../components/DropdownSelect.vue'
-import VSwiper from '../components/VSwiper.vue'
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
 
 export default {
 	name: 'home',
@@ -161,7 +204,8 @@ export default {
 	},
 	components: {
 		DropdownSelect,
-		VSwiper,
+		swiper,
+		swiperSlide
 	}
 }
 </script>

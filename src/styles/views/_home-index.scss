@@ -12,7 +12,7 @@
 	}
 
 	.container-filters {
-		margin: vw-base(10* 2px) vw-base(30 * 2px) 0;
+		margin: vw-base(10 * 2px) vw-base(30 * 2px) 0;
 
 
 		.row-search {
@@ -89,13 +89,83 @@
 			.show-all {
 				color: $color-main;
 				font-size: vw-base(11 * 2px);
-
 			}
 		}
 
-		.swiper {
-			height: vw-base(200 * 2px);
+		.swiper-foods {
+			margin-top: vw-base(10 * 4px);
+			height: vw-base(118 * 4px);
+
+			.wrap-food {
+				background-color: $color-white;
+				display: flex;
+				flex-flow: column nowrap;
+				border-radius: vw-base(15 * 2px);
+				padding: vw-base(15 * 2px);
+				margin-right: vw-base(15 * 2px);
+				height: vw-base(100 * 4px);
+
+				.thumbnail {
+					height: vw-base(80 * 4px);
+					background: #ccc;
+					border-radius: vw-base(15 * 2px);
+					flex:0 1 auto;
+				}
+
+				.row-info {
+					display: flex;
+					width: 100%;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+					flex:1 0 auto;
+
+					.col-title {
+						margin-top: vw-base(10 * 2px);
+						display: flex;
+						flex-flow: column nowrap;
+						justify-content: center;
+						align-items: center;
+
+						.text-title {
+							font-size: vw-base(33px);
+						}
+
+						.row-time {
+							display: flex;
+							flex-flow: row nowrap;
+							align-items: center;
+							margin-top: vw-base(5px);
+
+							.icon-time {
+								@include bg-3x('../assets/icon-kg.png');
+								width: vw-base(7 * 4px);
+								height:vw-base(7 * 4px);
+								background-size: 100%;
+							}
+
+							.text-time {
+								margin-left: vw-base(5 * 2px);
+								font-size: vw-base(25px);
+								line-height: 1.6;
+								color: #888;
+							}
+						}
+					}
+
+					.price {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						color: $color-main;
+						margin-right: vw-base(10 * 2px);
+					}
+				}
+
+
+			}
+
 		}
+
 	}
 
 	.container-categories {
@@ -114,8 +184,6 @@
 			.wrap-category {
 				display: flex;
 				flex-flow: column nowrap;
-				// width: vw-base(85 * 2px);
-				// height: vw-base(85 * 2px);
 				margin-right: vw-base(5 * 2px);
 				margin-bottom: vw-base(20 * 2px);
 
