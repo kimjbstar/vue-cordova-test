@@ -4,7 +4,7 @@
 			<div class="row-search">
 				<div class="btn-filter"></div>
 				<div class="wrap-search">
-					<input type="text" placeholder="search for food">
+					<input type="text" placeholder="search for dish">
 					<div class="icon-search"></div>
 				</div>
 
@@ -26,14 +26,27 @@
 			</div>
 
 		</div>
-		<div class="section-foods">
+		<div class="section-dishes">
 			<div class="row-best">
 				<div class="text-best">Today's best Deal</div>
 				<div class="show-all">SHOW ALL</div>
 			</div>
 
-			<swiper class="swiper-foods">
-				<swiper-slide class="wrap-food">
+			<swiper class="swiper-dishes">
+				<swiper-slide class="wrap-dish" >
+					<div class="thumbnail" v-on:click="goDishDetail"></div>
+					<div class="row-info">
+						<div class="col-title">
+							<div class="text-title">Mint Salad</div>
+							<div class="row-time">
+								<div class="icon-time"></div>
+								<div class="text-time">30-45 MIN</div>
+							</div>
+						</div>
+						<div class="price">$13.00</div>
+					</div>
+				</swiper-slide>
+				<swiper-slide class="wrap-dish">
 					<div class="thumbnail"></div>
 					<div class="row-info">
 						<div class="col-title">
@@ -46,20 +59,7 @@
 						<div class="price">$13.00</div>
 					</div>
 				</swiper-slide>
-				<swiper-slide class="wrap-food">
-					<div class="thumbnail"></div>
-					<div class="row-info">
-						<div class="col-title">
-							<div class="text-title">Mint Salad</div>
-							<div class="row-time">
-								<div class="icon-time"></div>
-								<div class="text-time">30-45 MIN</div>
-							</div>
-						</div>
-						<div class="price">$13.00</div>
-					</div>
-				</swiper-slide>
-				<swiper-slide class="wrap-food">
+				<swiper-slide class="wrap-dish">
 					<div class="thumbnail"></div>
 					<div class="row-info">
 						<div class="col-title">
@@ -108,6 +108,10 @@ export default {
 		},
 		setTime: function(time) {
 			this.params.time = time.name;
+		},
+		goDishDetail: function(){
+			alert(1);
+			this.$router.push({ name: 'dish-detail', params: { dishId: 1 }});
 		},
 	},
 	data: function(){

@@ -75,7 +75,7 @@
 		}
 	}
 
-	.section-foods {
+	.section-dishes {
 		margin: vw-base(30* 2px) vw-base(30 * 2px) 0;
 
 		.row-best {
@@ -92,11 +92,11 @@
 			}
 		}
 
-		.swiper-foods {
+		.swiper-dishes {
 			margin-top: vw-base(10 * 4px);
 			height: vw-base(118 * 4px);
 
-			.wrap-food {
+			.wrap-dish {
 				background-color: $color-white;
 				display: flex;
 				flex-flow: column nowrap;
