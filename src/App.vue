@@ -1,6 +1,5 @@
 <template>
 	<v-app id="gelato">
-
 <!-- 	<div class="dev-routers">
 		<div v-for="page in pages" :key="page.name">
 			<router-link :to="page.path" >{{ page.name }}</router-link>
@@ -69,45 +68,51 @@
 			</v-list>
 		</v-navigation-drawer>
 
+
 		<v-toolbar
-			app
 			flat
-			height="50"
+			height="44"
 			color="transparent"
 			v-if="isHeaderShowing"
+			:key="'v-toolbar'"
 		>
-			<v-toolbar-side-icon v-if="isSidebarShowing" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-			<v-toolbar-title class="headline">title</v-toolbar-title>
+
+			<v-toolbar-side-icon v-if="showBackButton" @click.stop="$router.go(-1)">
+				<v-icon>arrow_back</v-icon>
+			</v-toolbar-side-icon>
+			<v-toolbar-side-icon v-if="showSidebar" @click.stop="drawer = !drawer">
+			</v-toolbar-side-icon>
+			<v-toolbar-title class="v-toolbar-title-center">
+				{{ this.$router.currentRoute.name }}
+			</v-toolbar-title>
 			<v-spacer></v-spacer>
 
 		</v-toolbar>
 
-		<v-content id="v-content">
+		<v-content id="v-content" :key="'v-content'">
 			<!-- <v-container fluid id="v-container"> -->
-				<router-view></router-view>
+				<transition name="fade">
+					<router-view></router-view>
+				</transition>
 			<!-- </v-container> -->
 		</v-content>
 
-		<v-footer v-if="isFooterShowing" color="blue-grey" class="white--text" app>
+		<v-footer v-if="showFooter" color="blue-grey" class="white--text" app>
 			<span>Vuetify</span>
 			<v-spacer></v-spacer>
 			<span>&copy; 2017</span>
 		</v-footer>
 
+
+
 	</v-app>
 </template>
 
 <script>
-// import Setting from '@/views/Setting.vue'
-// import Mypage from '@/views/Mypage.vue'
-// import Timeline from '@/views/Timeline.vue'
 
 export default {
 	name: 'App',
 	components: {
-		// Setting,
-		// Mypage,
-		// Timeline,
 	},
 	created() {
 		this.$router.options.routes.forEach(route => {
@@ -116,15 +121,24 @@ export default {
 				path: route.path,
 			})
 		})
-		if ( ['login-index'].indexOf(this.$route.name) >= 0) {
-			this.isHeaderShowing = false;
+	},
+	computed: {
+		isHeaderShowing (){
+			// return ['login-index', 'home-index'].indexOf(this.$route.name) >= 0;
+			return true;
+		},
+		showBackButton () {
+			return this.$store.getters.routesCount > 1;
+		},
+		showSidebar () {
+			return this.$store.getters.routesCount == 1;
+		},
+		showFooter () {
+			return false;
 		}
 	},
 	data () {
 		return {
-			isHeaderShowing: true,
-			isFooterShowing: false,
-			isSidebarShowing : false,
 			pages: [],
 			drawer: null,
 		}
@@ -137,4 +151,5 @@ export default {
 	@import "@/styles/base/_common.scss";
 	@import "@/styles/base/_layout.scss";
 	@import "@/styles/base/_mixins.scss";
+	@import "@/styles/base/_vars.scss";
 </style>

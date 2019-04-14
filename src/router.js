@@ -7,10 +7,11 @@ import LoginIndex from './views/LoginIndex.vue'
 import JoinForm from './views/JoinForm.vue'
 import LoginForm from './views/LoginForm.vue'
 import DishDetail from './views/DishDetail.vue'
+import store from './store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
 	mode: process.env.CORDOVA_PLATFORM ? 'hash' : 'history',
 	base: process.env.BASE_URL,
 	routes: [
@@ -50,17 +51,36 @@ export default new Router({
 			children: [],
 		},
 		{
-			path: '/dish-detail',
+			path: '/dish-detail/:dishId',
 			name: 'dish-detail',
 			component: DishDetail,
-			children: [],
+
 		},
-		// {
-		// 	path: "*",
-		// 	component: { template: '<div>404</div>'},
-		// }
-	]
+		{
+			path: "*",
+			name: '404',
+			component: { template: '<div>404</div>'},
+		}
+	],
 })
+
+router.afterEach(function (to, from) {
+	if ( to.name == from.name ) {
+		return false;
+	}
+	if ( store.state.routes.length >= 2 &&
+		store.state.routes[1].name == from.name &&
+		store.state.routes[0].name == to.name
+	) {
+		store.commit('popHistory');
+	} else {
+		store.commit('pushHistory', to)
+	}
+	console.log(from.name + ' --> ' + to.name);
+	console.log('store.state.routes', store.state.routes);
+});
+
+export default router;
 
 // children: [
 // 	{

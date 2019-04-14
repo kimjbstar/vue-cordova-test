@@ -110,7 +110,6 @@ export default {
 			this.params.time = time.name;
 		},
 		goDishDetail: function(){
-			alert(1);
 			this.$router.push({ name: 'dish-detail', params: { dishId: 1 }});
 		},
 	},

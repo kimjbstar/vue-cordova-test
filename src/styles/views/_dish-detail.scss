@@ -4,23 +4,218 @@
 
 	.container-swiper {
 		height: vw-base(182 * 4px);
-		background: #afa;
+		background: #f2f4f7;
+
+		.swiper-dishes {
+			height: 100%;
+
+			.wrap-dish {
+
+				.thumbnail {
+					margin: vw-base(20 * 2px);
+					border-radius: vw-base(20 * 2px);
+					background: red;
+					height: 88%;
+					background-image:url('http://images.media-allrecipes.com/userphotos/960x960/4552561.jpg');
+					background-size: cover;
+				}
+
+			}
+		}
+
+
 	}
 
 	.container-info {
 		height: vw-base(102 * 4px);
-		background: #faa;
+		background: #f2f4f7;
+		display: flex;
+		flex-flow: column nowrap;
+		padding: vw-base(5 * 2px) vw-base(15 * 2px);
+
+		.row-title {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: space-between;
+
+			.text-title {
+				font-size: vw-base(9 * 4px);
+			}
+
+			.text-price {
+				font-size: vw-base(9 * 4px);
+				color: $color-main;
+			}
+		}
+
+		.row-time {
+			margin-top: vw-base(20 * 2px);
+			font-size: vw-base(6 * 4px);
+		}
+
+		.row-weight {
+			display: flex;
+			flex-flow: row nowrap;
+			margin-top: vw-base(5 * 2px);
+
+			.text-weight {
+				font-size: vw-base(6 * 4px);
+			}
+
+			.text-info {
+				margin-left: vw-base(5 * 4px);
+				font-size: vw-base(6 * 4px);
+			}
+		}
+
+		.row-chef {
+			margin-top: vw-base(5 * 2px);
+			font-size: vw-base(6 * 4px);
+
+			.name {
+				color: $color-main;
+			}
+		}
+
+		.desc {
+			margin-top: vw-base(10 * 2px);
+
+		}
 	}
 
 	.container-ingredient {
-		position: absolute;
+		position: fixed;
 		width: 100vw;
-		height: vw-base(68 * 4px);
+		// height: vw-base(68 * 4px);
 		bottom: 0;
 		z-index: 1;
-		border-radius: vw-base(10 * 2px);
+		border-radius: vw-base(10 * 4px);
+		background: $color-white;
+		display: flex;
+		flex-flow: column nowrap;
+		padding: vw-base(20 * 2px);
 
-		background: #aaf;
+		.row-heading {
+			display: flex;
+			flex-flow: row column;
+
+			.heading {
+
+			}
+
+			.btn-toggle {
+				position: absolute;
+				top: 10px;
+				left: 50%;
+				width: vw-base(30 * 2px);
+				height: vw-base(30 * 2px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: vw-base(30 * 2px);
+			}
+		}
+
+		.items {
+
+			.row-item {
+				display: flex;
+				flex-flow: row column;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: vw-base(20 * 2px);
+
+
+				.icon {
+					height: vw-base(25 * 4px);
+					width: vw-base(25 * 4px);
+					background: blue;
+					border-radius: 50%;
+					flex: 0 1 auto;
+				}
+
+				.col-title {
+					margin-left: vw-base(25 * 2px);
+					flex: 1 0 auto;
+					display: flex;
+					flex-flow: column nowrap;
+
+					.text-title {
+						font-weight: bold;
+					}
+
+					.price {
+						margin-top: vw-base(3.5 * 4px);
+						color: black;
+					}
+				}
+
+				.row-plusminus {
+					display: flex;
+					flex-flow: row nowrap;
+
+					.btn-minus,
+					.btn-plus {
+						width: vw-base(15 * 4px);
+						height: vw-base(12 * 4px);
+						font-size: vw-base(10 * 4px);
+						margin-right: vw-base(10 * 2px);
+						background: #cbd8ff;
+						color: #2d4057;
+						border-radius: vw-base(5 * 2px);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+
+					.text-value {
+						width: vw-base(15 * 4px);
+						height: vw-base(12 * 4px);
+						font-size: vw-base(10 * 4px);
+						margin-right: vw-base(10 * 2px);
+						display: flex;
+						justify-content: center;
+						align-items: center;
+					}
+				}
+
+			}
+
+		}
+
+
+
+		.row-btns {
+			display: flex;
+			flex-flow: row column;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: vw-base(20 * 2px);
+
+			.btn-order {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width : vw-base(70 * 4px);
+				height: vw-base(20 * 4px);
+				border-radius: vw-base(10 * 4px);
+				border: 1px solid $color-main;
+				color: $color-main;
+				padding: 0 vw-base(20 * 2px);
+			}
+			.btn-cart {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width : vw-base(70 * 4px);
+				height: vw-base(20 * 4px);
+				border-radius: vw-base(10 * 4px);
+				background-color: $color-main;
+				color: $color-white;
+				padding: 0 vw-base(20 * 2px);
+			}
+		}
 	}
 
 }
