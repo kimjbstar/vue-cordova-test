@@ -26,7 +26,30 @@
 				A chunky salad of cucumbers, cherry tomatoes, peppery mint leaves drizzled with a black olives sauce.
 			</div>
 		</div>
-		<div class="container-ingredient">
+		<div class="container-reviews">
+			<div class="heading">Reviews</div>
+			<div class="wrap-review">
+				<div class="col-user">
+					<div class="thumbnail-user"></div>
+					<div class="text-user-name">John Doe</div>
+				</div>
+				<div class="col-desc">
+					<div class="text-desc">We had such delicious dishes every time we went here. Fantastic thalis, great palak paneer, superb...</div>
+					<div class="created-at">22 Dec, 2018</div>
+				</div>
+			</div>
+			<div class="wrap-review">
+				<div class="col-user">
+					<div class="thumbnail-user"></div>
+					<div class="text-user-name">John Doe</div>
+				</div>
+				<div class="col-desc">
+					<div class="text-desc">We had such delicious dishes every time we went here. Fantastic thalis, great palak paneer, superb...</div>
+					<div class="created-at">22 Dec, 2018</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-ingredient" >
 			<div class="row-heading">
 				<div class="heading">Ingredients</div>
 				<div class="btn-toggle" v-on:click="toggleIngredient">-</div>

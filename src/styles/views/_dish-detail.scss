@@ -27,11 +27,11 @@
 	}
 
 	.container-info {
-		height: vw-base(102 * 4px);
+		height: vw-base(110 * 4px);
 		background: #f2f4f7;
 		display: flex;
 		flex-flow: column nowrap;
-		padding: vw-base(5 * 2px) vw-base(15 * 2px);
+		padding: vw-base(5 * 2px) vw-base(15 * 4px);
 
 		.row-title {
 			display: flex;
@@ -50,14 +50,14 @@
 		}
 
 		.row-time {
-			margin-top: vw-base(20 * 2px);
+			margin-top: vw-base(15 * 4px);
 			font-size: vw-base(6 * 4px);
 		}
 
 		.row-weight {
 			display: flex;
 			flex-flow: row nowrap;
-			margin-top: vw-base(5 * 2px);
+			margin-top: vw-base(8.5 * 4px);
 
 			.text-weight {
 				font-size: vw-base(6 * 4px);
@@ -70,7 +70,7 @@
 		}
 
 		.row-chef {
-			margin-top: vw-base(5 * 2px);
+			margin-top: vw-base(8.5 * 4px);
 			font-size: vw-base(6 * 4px);
 
 			.name {
@@ -79,8 +79,68 @@
 		}
 
 		.desc {
-			margin-top: vw-base(10 * 2px);
+			margin-top: vw-base(20 * 2px);
+			line-height: 1.5;
 
+		}
+	}
+
+	.container-reviews {
+		// min-height: vw-base(30 * 4px);
+		margin-bottom: vw-base(60 * 4px);
+		background: #f2f4f7;
+		display: flex;
+		flex-flow: column nowrap;
+		padding: vw-base(5 * 2px) vw-base(15 * 4px) vw-base(25 * 2px);
+
+		.heading {
+			font-size: vw-base(8.5 * 4px);
+		}
+
+		.wrap-review {
+			height: vw-base(60 * 4px);
+			background: $color-white;
+			margin-top: vw-base(10 * 4px);
+			border-radius: vw-base(10 * 4px);
+			display: flex;
+			flex-flow: row nowrap;
+
+			.col-user {
+				display: flex;
+				flex-flow: column nowrap;
+				flex: 1 0 auto;
+				justify-content: center;
+				align-items: center;
+				width: vw-base(36 * 4px);
+
+				.thumbnail-user {
+					height: vw-base(24 * 4px);
+					width: vw-base(24 * 4px);
+					border-radius: 50%;
+					background: red;
+				}
+				.text-user-name {
+					margin-top: vw-base(4 * 4px);
+				}
+			}
+
+			.col-desc {
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: center;
+				padding: vw-base(6 * 4px);
+				.text-desc {
+					font-size: vw-base(6 * 4px);
+					line-height: 1.45;
+					color: $color-text-gray;
+
+				}
+				.created-at {
+					color: $color-text-gray;
+					font-size: vw-base(6 * 4px);
+					margin-top: vw-base(10* 4px);
+				}
+			}
 		}
 	}
 
@@ -94,7 +154,7 @@
 		background: $color-white;
 		display: flex;
 		flex-flow: column nowrap;
-		padding: vw-base(20 * 2px);
+		padding: vw-base(15 * 4px);
 
 		.row-heading {
 			display: flex;
