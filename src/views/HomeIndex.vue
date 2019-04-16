@@ -11,15 +11,18 @@
 			</div>
 			<div class="row-filter">
 				<dropdown-select
+				class="dropdown-location"
 				:items="options.locations"
 				placeholder="위치"
 				:onChange="setLocation"
 				></dropdown-select>
 				<dropdown-select
+				class="dropdown-price"
 				:items="options.prices"
 				:onChange="setPrice"
 				placeholder="가격"></dropdown-select>
 				<dropdown-select
+				class="dropdown-time"
 				:items="options.times"
 				:onChange="setTime"
 				placeholder="시간"></dropdown-select>
@@ -28,7 +31,7 @@
 		</div>
 		<div class="section-dishes">
 			<div class="row-best">
-				<div class="text-best">Today's best Deal</div>
+				<div class="text-best">Today's best Deals</div>
 				<div class="show-all">SHOW ALL</div>
 			</div>
 
@@ -88,6 +91,9 @@
 				</div>
 			</div>
 		</div>
+
+
+
 	</div>
 </template>
 
@@ -95,7 +101,6 @@
 import DropdownSelect from '../components/DropdownSelect.vue'
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-
 
 export default {
 	name: 'home',
