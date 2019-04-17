@@ -99,45 +99,36 @@
 
 		<v-bottom-nav
 		:active.sync="bottomNav"
-		:value="true"
+		:value="showBottomNav"
 		fixed
 		>
-			<v-btn
-			color="teal"
-			flat
-			value="recent"
-			>
-			<span>Recent</span>
-			<v-icon>history</v-icon>
+			<v-btn flat value="home" v-on:click="pushRouter('/')">
+				<span>Home</span>
+				<v-icon>history</v-icon>
 			</v-btn>
 
-			<v-btn
-			color="teal"
-			flat
-			value="favorites"
-			>
+			<v-btn flat value="favorites" v-on:click="pushRouter('favorites-index')">
 				<span>Favorites</span>
 				<v-icon>favorite</v-icon>
 			</v-btn>
 
-			<v-btn
-			color="teal"
-			flat
-			value="nearby"
-			>
-				<span>Nearby</span>
+			<v-btn flat value="cartitem" v-on:click="pushRouter('cartitem-index')">>
+				<span>Cart</span>
 				<v-icon>place</v-icon>
 			</v-btn>
-		</v-bottom-nav>
 
+			<v-btn flat value="profile" v-on:click="pushRouter('profile-form')">>
+				<span>Profile</span>
+				<v-icon>history</v-icon>
+			</v-btn>
+
+		</v-bottom-nav>
 
 		<v-footer v-if="showFooter" color="blue-grey" class="white--text" app>
 			<span>Vuetify</span>
 			<v-spacer></v-spacer>
 			<span>&copy; 2017</span>
 		</v-footer>
-
-
 
 	</v-app>
 </template>
@@ -149,12 +140,32 @@ export default {
 	components: {
 	},
 	created() {
+
+		// for dev
 		this.$router.options.routes.forEach(route => {
 			this.pages.push({
 				name: route.name,
 				path: route.path,
 			})
 		})
+
+		// 접근한 라우터 핸들링
+		// TODO : created 가 아닌 매 접근시 마다 해야함
+		var bottomNavRouters = {
+			'home-index': 'home',
+			'favorites-index' : 'favorites',
+			'cartitem-index': 'cartitem',
+			'profile-form': 'profile',
+		};
+		if ( bottomNavRouters[this.$route.name] ) {
+			this.bottomNav = bottomNavRouters[this.$route.name];
+			this.$store.commit('clearHistory');
+		}
+	},
+	methods : {
+		pushRouter (routeName) {
+			this.$router.push(routeName);
+		}
 	},
 	computed: {
 		isHeaderShowing (){
@@ -167,14 +178,18 @@ export default {
 		showSidebar () {
 			return this.$store.getters.routesCount == 1;
 		},
+		showBottomNav () {
+			return [ 'home-index', 'cartitem-index', 'favorites-index', 'profile-form' ].indexOf(this.$route.name) >= 0;
+		},
 		showFooter () {
 			return false;
-		}
+		},
 	},
 	data () {
 		return {
 			pages: [],
 			drawer: null,
+			bottomNav: '',
 		}
 	}
 }

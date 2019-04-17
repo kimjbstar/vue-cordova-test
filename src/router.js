@@ -7,6 +7,9 @@ import LoginIndex from './views/LoginIndex.vue'
 import JoinForm from './views/JoinForm.vue'
 import LoginForm from './views/LoginForm.vue'
 import DishDetail from './views/DishDetail.vue'
+import FavoritesIndex from './views/FavoritesIndex.vue'
+import CartitemIndex from './views/CartitemIndex.vue'
+import ProfileForm from './views/ProfileForm.vue'
 import store from './store'
 
 Vue.use(Router)
@@ -54,7 +57,21 @@ const router = new Router({
 			path: '/dish-detail/:dishId',
 			name: 'dish-detail',
 			component: DishDetail,
-
+		},
+		{
+			path: '/favorites-index',
+			name: 'favorites-index',
+			component: FavoritesIndex,
+		},
+		{
+			path: '/cartitem-index',
+			name: 'cartitem-index',
+			component: CartitemIndex,
+		},
+		{
+			path: '/profile-form',
+			name: 'profile-form',
+			component: ProfileForm,
 		},
 		{
 			path: "*",
