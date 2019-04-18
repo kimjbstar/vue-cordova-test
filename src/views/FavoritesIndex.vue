@@ -1,6 +1,43 @@
 <template>
 	<div class="page-favorites-index">
-		#favorite-index
+		<div class="container-dishes">
+			<div class="wrap-dish">
+				<div class="thumbnail"></div>
+				<div class="price">$8.00</div>
+				<div class="name">Pancakes</div>
+				<div class="time">30-45 MIN</div>
+			</div>
+			<div class="wrap-dish">
+				<div class="thumbnail"></div>
+				<div class="price">$8.00</div>
+				<div class="name">Pancakes</div>
+				<div class="time">30-45 MIN</div>
+			</div>
+			<div class="wrap-dish">
+				<div class="thumbnail"></div>
+				<div class="price">$8.00</div>
+				<div class="name">Pancakes</div>
+				<div class="time">30-45 MIN</div>
+			</div>
+			<div class="wrap-dish">
+				<div class="thumbnail"></div>
+				<div class="price">$8.00</div>
+				<div class="name">Pancakes</div>
+				<div class="time">30-45 MIN</div>
+			</div>
+			<div class="wrap-dish">
+				<div class="thumbnail"></div>
+				<div class="price">$8.00</div>
+				<div class="name">Pancakes</div>
+				<div class="time">30-45 MIN</div>
+			</div>
+			<div class="wrap-dish">
+				<div class="thumbnail"></div>
+				<div class="price">$8.00</div>
+				<div class="name">Pancakes</div>
+				<div class="time">30-45 MIN</div>
+			</div>
+		</div>
 	</div>
 </template>
 

@@ -10,6 +10,7 @@ import DishDetail from './views/DishDetail.vue'
 import FavoritesIndex from './views/FavoritesIndex.vue'
 import CartitemIndex from './views/CartitemIndex.vue'
 import ProfileForm from './views/ProfileForm.vue'
+import DishList from './views/DishList.vue'
 import store from './store'
 
 Vue.use(Router)
@@ -74,6 +75,11 @@ const router = new Router({
 			component: ProfileForm,
 		},
 		{
+			path: '/dish-list',
+			name: 'dish-list',
+			component: DishList,
+		},
+		{
 			path: "*",
 			name: '404',
 			component: { template: '<div>404</div>'},
@@ -98,7 +104,6 @@ router.afterEach(function (to, from) {
 	) {
 		store.commit('popHistory');
 	} else {
-		console.log('to', to);
 		store.commit('pushHistory', to)
 	}
 	if ( bottomNavRouters[to.name] ) {

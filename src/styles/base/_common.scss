@@ -52,3 +52,43 @@ body {
 	width: 100%;
 	text-align: center;
 }
+
+@mixin container-dishes {
+	display: flex;
+	flex-flow: row wrap;
+	background-color: $color-bg-main;
+	justify-content: center;
+	padding-top: vw-base(5 * 4px);
+	padding-bottom: vw-base(25  * 4px);
+
+	.wrap-dish {
+		background-color: $color-white;
+		border-radius: vw-base(7.5 * 4px);
+		width: vw-base(75 * 4px);
+		height: vw-base(100 * 4px);
+		margin: vw-base(5 * 4px) vw-base(4 * 4px);
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+
+		.thumbnail {
+			background-image:url('http://images.media-allrecipes.com/userphotos/960x960/4552561.jpg');
+			border-radius: vw-base(7.5 * 4px);
+			height: vw-base(60 * 4px);
+			width: 100%;
+			background-size: cover;
+		}
+		.price {
+			margin: vw-base(5 * 4px) 0;
+			color: $color-main;
+		}
+		.name {
+
+		}
+		.time {
+			margin-top: vw-base(2 * 4px);
+			color: $color-text-gray;
+		}
+
+	}
+}

@@ -113,8 +113,9 @@
 				height: vw-base(110 * 4px);
 
 				.thumbnail {
+					background-image:url('http://images.media-allrecipes.com/userphotos/960x960/4552561.jpg');
+					background-size: cover;
 					height: vw-base(80 * 4px);
-					background: #ccc;
 					border-radius: vw-base(15 * 2px);
 					flex:0 1 auto;
 				}
