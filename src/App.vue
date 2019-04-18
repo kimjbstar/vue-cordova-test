@@ -112,12 +112,12 @@
 				<v-icon>favorite</v-icon>
 			</v-btn>
 
-			<v-btn flat value="cartitem" v-on:click="pushRouter('cartitem-index')">>
+			<v-btn flat value="cartitem" v-on:click="pushRouter('cartitem-index')">
 				<span>Cart</span>
 				<v-icon>place</v-icon>
 			</v-btn>
 
-			<v-btn flat value="profile" v-on:click="pushRouter('profile-form')">>
+			<v-btn flat value="profile" v-on:click="pushRouter('profile-form')">
 				<span>Profile</span>
 				<v-icon>history</v-icon>
 			</v-btn>
@@ -140,7 +140,6 @@ export default {
 	components: {
 	},
 	created() {
-
 		// for dev
 		this.$router.options.routes.forEach(route => {
 			this.pages.push({
@@ -148,20 +147,8 @@ export default {
 				path: route.path,
 			})
 		})
-
-		// 접근한 라우터 핸들링
-		// TODO : created 가 아닌 매 접근시 마다 해야함
-		var bottomNavRouters = {
-			'home-index': 'home',
-			'favorites-index' : 'favorites',
-			'cartitem-index': 'cartitem',
-			'profile-form': 'profile',
-		};
-		if ( bottomNavRouters[this.$route.name] ) {
-			this.bottomNav = bottomNavRouters[this.$route.name];
-			this.$store.commit('clearHistory');
-		}
 	},
+
 	methods : {
 		pushRouter (routeName) {
 			this.$router.push(routeName);
@@ -190,6 +177,7 @@ export default {
 			pages: [],
 			drawer: null,
 			bottomNav: '',
+
 		}
 	}
 }

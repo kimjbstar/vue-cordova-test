@@ -9,6 +9,9 @@ const store = new Vuex.Store({
 		routes: [],
 	},
 	getters: {
+		routes (state) {
+			return state.routes;
+		},
 		routesCount (state) {
 			return state.routes.length;
 		},
@@ -21,10 +24,15 @@ const store = new Vuex.Store({
 			state.routes.push(route);
 		},
 		popHistory ( state ) {
-			state.routes.pop();
+			if ( state.routes.length > 1 ) {
+				state.routes.pop();
+			}
 		},
 		clearHistory ( state ) {
-			state.routes = [];
+			if ( state.routes.length > 1 ) {
+				var lastRoute = state.routes[state.routes.length - 1];
+				state.routes = [ lastRoute ];
+			}
 		}
 	}
 })

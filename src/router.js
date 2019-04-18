@@ -81,6 +81,13 @@ const router = new Router({
 	],
 })
 
+var bottomNavRouters = {
+		'home-index': 'home',
+		'favorites-index' : 'favorites',
+		'cartitem-index': 'cartitem',
+		'profile-form': 'profile',
+};
+
 router.afterEach(function (to, from) {
 	if ( to.name == from.name ) {
 		return false;
@@ -91,10 +98,12 @@ router.afterEach(function (to, from) {
 	) {
 		store.commit('popHistory');
 	} else {
+		console.log('to', to);
 		store.commit('pushHistory', to)
 	}
-	console.log(from.name + ' --> ' + to.name);
-	console.log('store.state.routes', store.state.routes);
+	if ( bottomNavRouters[to.name] ) {
+		store.commit('clearHistory');
+	}
 });
 
 export default router;
