@@ -1,2 +1,69 @@
 .page-cartitem-index {
+	.container-cartitems {
+		padding: vw-base(15 * 4px);
+
+		.wrap-cartitem {
+			background: #aff;
+			border-radius: vw-base(10 * 4px);
+			display: flex;
+			flex-flow: row nowrap;
+
+			.col-thumbnail {
+				width: vw-base(60 * 4px);
+				display: flex;
+				flex-flow: column nowrap;
+				padding: vw-base(5 * 4px);
+
+				.thumbnail {
+					background-image:url('http://images.media-allrecipes.com/userphotos/960x960/4552561.jpg');
+					background-size: cover;
+					width: vw-base(50 * 4px);
+					height: vw-base(37 * 4px);
+					border-radius: vw-base(5 * 4px);
+				}
+			}
+
+			.col-info {
+				display: flex;
+				flex-flow: column nowrap;
+
+				.title {
+					margin-top: vw-base(10 * 4px);
+					font-size: vw-base(7 * 4px);
+				}
+
+				.amount-price {
+					margin-top: vw-base(3 * 4px);
+					// color: $coloir-text-gray;
+				}
+
+				.row-price {
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+
+					.row-edit-amount {
+						display: flex;
+						flex-flow: row nowrap;
+						margin-top: vw-base(8 * 4px);
+
+						.btn-minus,
+						.btn-plus {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							width: vw-base(12 * 4px);
+							height: vw-base(10 * 4px);
+							border: 1px solid black;
+						}
+
+						.amount {
+							font-size: vw-base(7 * 4px);
+							margin: 0 vw-base(6 * 4px);
+						}
+					}
+				}
+			}
+		}
+	}
 }

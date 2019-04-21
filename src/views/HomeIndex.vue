@@ -4,28 +4,37 @@
 			<div class="row-search">
 				<div class="btn-filter"></div>
 				<div class="wrap-search">
-					<input type="text" placeholder="search for dish">
-					<div class="icon-search"></div>
+					<form v-on:submit.prevent="onSubmit">
+						<input type="text" v-model="options.keyword" placeholder="search for dish">
+						<div class="icon-search"></div>
+					</form>
 				</div>
-
 			</div>
-			<div class="row-filter">
+			<div class="row-filters">
 				<dropdown-select
-				class="dropdown-location"
-				:items="options.locations"
-				placeholder="위치"
-				:onChange="setLocation"
+					class="dropdown-location"
+					:items="options.locations"
+					:item="options.location"
+					placeholder="위치"
+					:onChange="setLocation"
+					:key="'dropdown-location'"
 				></dropdown-select>
 				<dropdown-select
-				class="dropdown-price"
-				:items="options.prices"
-				:onChange="setPrice"
-				placeholder="가격"></dropdown-select>
+					class="dropdown-price"
+					:items="options.prices"
+					:item="options.price"
+					:onChange="setPrice"
+					:key="'dropdown-price'"
+					placeholder="가격">
+				</dropdown-select>
 				<dropdown-select
-				class="dropdown-time"
-				:items="options.times"
-				:onChange="setTime"
-				placeholder="시간"></dropdown-select>
+					class="dropdown-time"
+					:items="options.times"
+					:item="options.time"
+					:onChange="setTime"
+					:key="'dropdown-time'"
+					placeholder="시간">
+				</dropdown-select>
 			</div>
 
 		</div>
@@ -91,9 +100,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
 	</div>
 </template>
 
@@ -106,27 +112,37 @@ export default {
 	name: 'home',
 	methods: {
 		setLocation: function(location) {
-			this.params.location = location.name;
+			this.options.location = location;
 		},
 		setPrice: function(price) {
-			this.params.price = price.name;
+			this.options.price = price;
 		},
 		setTime: function(time) {
-			this.params.time = time.name;
+			this.options.time = time;
 		},
 		goDishDetail: function(){
 			this.$router.push({ name: 'dish-detail', params: { dishId: 1 }});
 		},
+		onSubmit: function(){
+			var params = {
+				location_id : this.options.location.id,
+				price_id : this.options.price.id,
+				time_id : this.options.time.id,
+			}
+			this.$router.push({
+				name: 'dish-list',
+				query: params,
+			});
+		}
 	},
 	data: function(){
 		return {
-			params: {
+			options: {
 				location: '',
 				price: '',
 				time: '',
 				category_id: '',
-			},
-			options: {
+				keyword: '',
 				locations : [
 					{
 						id: 1,
@@ -207,7 +223,7 @@ export default {
 					id: 8,
 					name:'More',
 				},
-			]
+			],
 		}
 	},
 	components: {

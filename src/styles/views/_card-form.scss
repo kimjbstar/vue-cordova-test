@@ -1,0 +1,42 @@
+.page-card-form {
+
+	.container-card-form {
+		margin: vw-base(15 * 4px);
+
+		.wrap-form {
+			@include wrap-form;
+
+			.row-form {
+				.input-mmyy {
+					width: vw-base(54 * 4px);
+					flex: 1 0 auto;
+				}
+
+				.input-cvv {
+					margin-left: vw-base(11 * 4px);
+					flex: 0 1 auto;
+				}
+			}
+		}
+
+	}
+
+	.container-btn {
+		padding-top: vw-base(10 * 4px);
+		display: flex;
+		justify-content: center;
+
+		.btn-next {
+			width: vw-base(90 * 4px);
+			height: vw-base(21 * 4px);
+			background: $color-main;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $color-white;
+			border-radius: vw-base(10 * 4px);
+			cursor: pointer;
+		}
+	}
+
+}

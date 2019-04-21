@@ -11,6 +11,9 @@ import FavoritesIndex from './views/FavoritesIndex.vue'
 import CartitemIndex from './views/CartitemIndex.vue'
 import ProfileForm from './views/ProfileForm.vue'
 import DishList from './views/DishList.vue'
+import CardForm from './views/CardForm.vue'
+import OrderForm from './views/OrderForm.vue'
+import OrderDoneIndex from './views/OrderDoneIndex.vue'
 import store from './store'
 
 Vue.use(Router)
@@ -18,6 +21,9 @@ Vue.use(Router)
 const router = new Router({
 	mode: process.env.CORDOVA_PLATFORM ? 'hash' : 'history',
 	base: process.env.BASE_URL,
+	scrollBehavior (to, from, savedPosition) {
+		return { x: 0, y: 0 }
+	},
 	routes: [
 		{
 			path: '/',
@@ -80,6 +86,21 @@ const router = new Router({
 			component: DishList,
 		},
 		{
+			path: '/card-form',
+			name: 'card-form',
+			component: CardForm,
+		},
+		{
+			path: '/order-form',
+			name: 'order-form',
+			component: OrderForm,
+		},
+		{
+			path: '/order-done-index',
+			name: 'order-done-index',
+			component: OrderDoneIndex,
+		},
+		{
 			path: "*",
 			name: '404',
 			component: { template: '<div>404</div>'},
@@ -88,10 +109,10 @@ const router = new Router({
 })
 
 var bottomNavRouters = {
-		'home-index': 'home',
-		'favorites-index' : 'favorites',
-		'cartitem-index': 'cartitem',
-		'profile-form': 'profile',
+	'home-index': 'home',
+	'favorites-index' : 'favorites',
+	'cartitem-index': 'cartitem',
+	'profile-form': 'profile',
 };
 
 router.afterEach(function (to, from) {

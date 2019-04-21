@@ -92,3 +92,40 @@ body {
 
 	}
 }
+
+@mixin row-filters {
+	display: flex;
+	height: vw-base(17.5 * 4px);
+	margin-top: vw-base(10 * 2px);
+	justify-content: space-between;
+	align-items: center;
+
+	.dropdown-price,
+	.dropdown-time {
+		margin-left: vw-base(3 * 4px);
+	}
+}
+
+@mixin row-input {
+	height: vw-base(17 * 4px);
+	padding-left: vw-base(3 *4px);
+	border-bottom: 1px solid $color-border-gray;
+	width: 100%;
+}
+
+@mixin wrap-form {
+	padding: vw-base(10 * 4px) vw-base(16 * 4px);
+	background: $color-white;
+	border-radius: vw-base(10 * 4px);
+	box-shadow: 0 1.5px 10px 0 rgba(0, 0, 0, 0.04);
+
+	.row-form {
+		display: flex;
+		flex-flow: row nowrap;
+		margin: vw-base(10 * 4px) 0;
+
+		.row-input {
+			@include row-input;
+		}
+	}
+}

@@ -81,7 +81,7 @@
 				</div>
 			</div>
 			<div class="row-btns">
-				<div class="btn-order">
+				<div class="btn-order" v-on:click="goCardForm">
 					Order Now
 				</div>
 				<div class="btn-cart">
@@ -104,7 +104,10 @@ export default {
 	methods: {
 		toggleIngredient: function(){
 			this.options.isIngredientPanelOpened = !this.options.isIngredientPanelOpened;
-		}
+		},
+		goCardForm (){
+			this.$router.push({ name: 'card-form' });
+		},
 	},
 	data: function(){
 		return {

@@ -1,0 +1,41 @@
+.page-order-form {
+
+	.container-order-form {
+		margin: vw-base(15 * 4px);
+
+		.wrap-form {
+			@include wrap-form;
+
+			.row-form {
+				.input-firstname {
+					width: vw-base(54 * 4px);
+					flex: 1 0 auto;
+				}
+
+				.input-lastname {
+					margin-left: vw-base(11 * 4px);
+					flex: 0 1 auto;
+				}
+			}
+		}
+
+	}
+
+	.container-btn {
+		display: flex;
+		justify-content: center;
+
+		.btn-next {
+			width: vw-base(90 * 4px);
+			height: vw-base(21 * 4px);
+			background: $color-main;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $color-white;
+			border-radius: vw-base(10 * 4px);
+			cursor: pointer;
+		}
+	}
+
+}

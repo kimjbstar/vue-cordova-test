@@ -1,4 +1,12 @@
 .page-dish-list {
+	.container-filters {
+		padding: vw-base(10 * 2px) vw-base(30 * 2px) 0;
+
+		.row-filters {
+			@include row-filters;
+		}
+	}
+
 	.container-dishes {
 		@include container-dishes;
 	}

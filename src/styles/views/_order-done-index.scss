@@ -1,0 +1,41 @@
+.page-order-done-index {
+
+	.container-icon {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		height: 75vh;
+
+
+		.icon-done {
+			@include bg-3x('../assets/icon-add-cart-done.png');
+			width: vw-base(47 * 4px);
+			height: vw-base(47 * 4px);
+		}
+
+		.text-done {
+			margin-top: vw-base(10 * 4px);
+			font-size: vw-base(10 * 4px);
+		}
+	}
+
+	.container-btn {
+		padding-top: vw-base(10 * 4px);
+		display: flex;
+		justify-content: center;
+
+		.btn-next {
+			width: vw-base(90 * 4px);
+			height: vw-base(21 * 4px);
+			background: $color-main;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $color-white;
+			border-radius: vw-base(10 * 4px);
+			cursor: pointer;
+		}
+	}
+
+}
