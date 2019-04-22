@@ -1,18 +1,23 @@
 .page-cartitem-index {
 	.container-cartitems {
-		padding: vw-base(15 * 4px);
+		padding: vw-base(5 * 4px) vw-base(15 * 4px) vw-base(170 * 4px);
 
 		.wrap-cartitem {
 			background: #aff;
 			border-radius: vw-base(10 * 4px);
 			display: flex;
 			flex-flow: row nowrap;
+			background-color: $color-white;
+			box-shadow: 0 vw-base(1.5 * 4px) vw-base(10 * 4px) 0 rgba(0, 0, 0, 0.04);
+			margin-top: vw-base(10 * 4px);
+
 
 			.col-thumbnail {
 				width: vw-base(60 * 4px);
 				display: flex;
 				flex-flow: column nowrap;
 				padding: vw-base(5 * 4px);
+				flex: 0 1 auto;
 
 				.thumbnail {
 					background-image:url('http://images.media-allrecipes.com/userphotos/960x960/4552561.jpg');
@@ -26,26 +31,31 @@
 			.col-info {
 				display: flex;
 				flex-flow: column nowrap;
+				flex: 1 0 auto;
 
-				.title {
-					margin-top: vw-base(10 * 4px);
+				.text-title {
+					margin-top: vw-base(8 * 4px);
 					font-size: vw-base(7 * 4px);
 				}
 
 				.amount-price {
 					margin-top: vw-base(3 * 4px);
-					// color: $coloir-text-gray;
+					font-size: vw-base(5.5 * 4px);
+					color: $color-border-gray;
 				}
 
 				.row-price {
 					display: flex;
 					flex-flow: row nowrap;
 					justify-content: space-between;
+					align-items: center;
+					margin-top: vw-base(8 * 4px);
+
 
 					.row-edit-amount {
 						display: flex;
 						flex-flow: row nowrap;
-						margin-top: vw-base(8 * 4px);
+						align-items: center;
 
 						.btn-minus,
 						.btn-plus {
@@ -54,7 +64,9 @@
 							align-items: center;
 							width: vw-base(12 * 4px);
 							height: vw-base(10 * 4px);
-							border: 1px solid black;
+							border: 1px solid $color-border-gray;
+							border-radius: vw-base(3 * 4px);
+							color: $color-border-gray;
 						}
 
 						.amount {
@@ -62,8 +74,73 @@
 							margin: 0 vw-base(6 * 4px);
 						}
 					}
+
+					.text-price {
+						color: $color-main;
+						margin-right: vw-base(10 * 4px);
+					}
+
 				}
 			}
 		}
 	}
+
+	.container-price {
+		height: vw-base(164 * 4px);
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		background: $color-white;
+		// opacity: .5;
+		padding: vw-base(15 * 4px);
+
+		.row-title {
+			font-size: vw-base(7.5 * 4px);
+			font-weight: bold;
+		}
+
+		.row-price,
+		.row-delivery-price,
+		.row-total-price {
+			height: vw-base(25 * 4px);
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid $color-border-gray;
+
+			.name,
+			.value {
+				font-size: vw-base(8 * 4px);
+			}
+		}
+
+		.row-total-price {
+			border: none;
+			.name,
+			.value {
+				font-weight: bold;
+			}
+		}
+
+		.row-btn {
+			display: flex;
+			justify-content: center;
+			margin-top: vw-base(10 * 4px);
+
+			.btn-submit {
+				width: vw-base(90 * 4px);
+				height: vw-base(21 * 4px);
+				background: $color-main;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $color-white;
+				border-radius: vw-base(10 * 4px);
+				cursor: pointer;
+			}
+		}
+
+	}
+
 }
