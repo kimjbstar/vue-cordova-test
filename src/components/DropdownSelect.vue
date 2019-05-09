@@ -41,7 +41,6 @@ export default {
 	},
 	computed: {
 		upperLabel () {
-			console.log('UPPER LABEL', this.selected);
 			var placeholder = this.placeholder ? this.placeholder : '선택해'
 			return this.selected.name ? this.selected.name : placeholder
 		}

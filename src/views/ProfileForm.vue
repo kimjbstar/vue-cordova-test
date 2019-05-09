@@ -21,25 +21,31 @@ export default {
 			var inputId = Math.random().toString(36).substring(2)
 			var newInput = document.createElement("input");
 			newInput.type = "file";
+			newInput.name = 'file-name';
 			newInput.id = inputId;
 			document.addEventListener('change',function(e){
 				if(e.target && e.target.id== inputId ){
-					// console.log('e', e);
-					// console.log('e.target', e.target);
 					var file = e.target.files[0];
 					if ( file == undefined ) {
 						return;
 					}
 					var formData = new FormData();
 					formData.append('userfile', file);
+					// for(var pair of formData.entries()) { console.log(pair[0]+ ', '+ pair[1]); }
 
-					axios.post('localhost:11000',{
-						data: formData,
-						config: { headers: {'Content-Type': 'multipart/form-data' }}
+					var CDN_HOST = 'http://localcdn.homekitchen.com';
+					var url = CDN_HOST + '/api/upload';
+					axios.post(url, formData, {
+						config: {
+							headers: {
+								'Content-Type': 'multipart/form-data',
+							},
+						},
+						withCredentials: true,
 					}).then( response => {
 						console.log('response', response)
 					}).catch( error => {
-						console.log('failed', error)
+						alert('이미지 서버 업로드에 실패하였습니다.');
 					})
 				}
 			});

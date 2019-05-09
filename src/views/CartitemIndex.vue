@@ -115,6 +115,9 @@ export default {
 	mounted: function(){
 	},
 	methods: {
+		submit (){
+			alert(1)
+		}
 	},
 	data: function(){
 		return {

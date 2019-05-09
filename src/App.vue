@@ -140,7 +140,6 @@ export default {
 	components: {
 	},
 	created() {
-		// for dev
 		this.$router.options.routes.forEach(route => {
 			this.pages.push({
 				name: route.name,

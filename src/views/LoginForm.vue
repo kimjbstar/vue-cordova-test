@@ -2,8 +2,8 @@
 	<div class="page-login-form">
 		<div class="container-login">
 			<div class="icon-logo"></div>
-			<v-form v-model="valid" class="form-login">
-				<input type="text" class="name" v-model="user.name" placeholder="Name">
+			<v-form  class="form-login">
+				<input type="text" class="name" v-model="user.email" placeholder="email">
 				<input type="text" class="password" v-model="user.password" placeholder="Password">
 			<div class="find-password">forget password ?</div>
 			<div class="btn-submit" v-on:click="submit()">SIGN IN</div>
@@ -25,21 +25,40 @@
 </template>
 
 <script>
-	export default {
-		data : function(){
-			return {
-				user: {
-					email: '',
-					password: '',
-				}
-			}
-		},
-		methods : {
-			submit: function(){
-
+import axios from 'axios'
+export default {
+	data : function(){
+		return {
+			user: {
+				email: '',
+				password: '',
 			}
 		}
+	},
+	methods: {
+		submit: function(){
+			console.log('this.user', this.user);
+			var user = _.cloneDeep(this.user)
+			var MAIN_HOST = 'http://local.homekitchen.com';
+			var url = MAIN_HOST + '/api/api-token-auth/';
+			axios.post(url, user, {
+				// config: {
+				// 	headers: {
+				// 		'Content-Type': 'multipart/form-data',
+				// 	},
+				// },
+				withCredentials: true,
+			}).then( response => {
+				console.log('response', response)
+
+				localStorage.setItem('jwt-token', response.data.token)
+				this.router.push('home-index')
+			}).catch( error => {
+				alert('이미지 서버 업로드에 실패하였습니다.');
+			})
+		}
 	}
+}
 </script>
 
 <style lang="scss">

@@ -14,6 +14,7 @@ import DishList from './views/DishList.vue'
 import CardForm from './views/CardForm.vue'
 import OrderForm from './views/OrderForm.vue'
 import OrderDoneIndex from './views/OrderDoneIndex.vue'
+import Intro from './views/Intro.vue'
 import store from './store'
 
 Vue.use(Router)
@@ -28,6 +29,11 @@ const router = new Router({
 	routes: [
 		{
 			path: '/',
+			name: 'intro',
+			component: Intro,
+		},
+		{
+			path: '/home-index',
 			name: 'home-index',
 			component: HomeIndex,
 		},
