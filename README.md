@@ -1,4 +1,4 @@
-# gelato
+# vue-cordova-test
 vue-cordova hybrid app framework project.
 
 ## Project setup
